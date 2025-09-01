@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  YouAreAwesome
 //
-//  Created by Tyler Lin on 8/31/25.
+//  Created by Tyler Lin on 8/31/25
 //
 
 import SwiftUI
