@@ -14,27 +14,30 @@ struct ContentView: View {
     @State private var messageNumber = 0
     var body: some View {
         VStack {
-            Spacer()
+            Text(message)
+                .frame(height: 100)
+                .font(.largeTitle)
+                .fontWeight(.heavy)
+                .foregroundStyle(.red)
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.5)
+                .animation(.easeInOut(duration: 0.15), value: message)
             
             Image(imageName)
                 .resizable()
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 30))
                 .shadow(radius: 30)
-            
-            Text(message)
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .foregroundStyle(.red)
-                .multilineTextAlignment(.center)
+                .animation(.default, value: imageName)
             
             Spacer()
             
-            Button("Show Message") {
-                let messages = ["You Can Do Better...",
+            Button("Press Me!") {
+                let messages = ["You Can Do Better Bro!",
                                 "That's Very Mediocre!",
+                                "My Dog Usually Likes Everyone, But He Has Taken A Particularly Standoff-ish Stance Towards Your Face And Overall Demeanour :c",
                                 "You Kinda Don't Suck!",
-                                "You Did An Okay Job?",
+                                "Congrats! You're Not Completely Incompetent!",
                                 "Your Mom May Or May Not Approve!",
                                 "Prof G Tossed You A Snickers Bar, But You're Deathly Allergic to Nuts!!!"]
                 
@@ -52,7 +55,7 @@ struct ContentView: View {
             }
             .buttonStyle(.borderedProminent)
             .font(.title2)
-            .tint(.orange)
+            .tint(.blue)
         }
         .padding()
     }
